@@ -1,5 +1,3 @@
-package cse360assign2;
-
 /*
 * Adding machine class
 * @author Sahas Chitlange
@@ -9,6 +7,7 @@ package cse360assign2;
 public class AddingMachine {
 
 	private int total;
+	private String history = "0";
 
 	/*
 	* AddingMachine constructor constructs
@@ -23,7 +22,7 @@ public class AddingMachine {
 	* @returns the total of the "addition" operation
 	*/
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 
 	/*
@@ -31,7 +30,8 @@ public class AddingMachine {
 	* @param value to add
 	*/
 	public void add (int value) {
-		
+		history += (" + " + String.valueOf(value));
+		total += value;
 	}
 
 	/*
@@ -39,21 +39,35 @@ public class AddingMachine {
 	* @param value to subtract
 	*/
 	public void subtract (int value) {
-		
+		history += (" - " + String.valueOf(value));
+		total -= value;
 	}
 
 	/*
-	* a toString funciton
+	* A history of the transactions must be kept to be returned
+	* by the toString method.
 	* @return returns string form information
 	*/
 	public String toString () {
-		return "";
+		return history;
 	}
 
 	/*
 	* clears the string / resets the string
 	*/
 	public void clear() {
-	
+		history = "0";
+	}
+
+	public static void main(String[] args) {
+		AddingMachine am = new AddingMachine();
+		am.add(0);
+		am.subtract(3);
+
+		System.out.println(am.getTotal());
+		System.out.println(am.toString());
+		am.clear();
+		System.out.println(am.toString());
+
 	}
 }
