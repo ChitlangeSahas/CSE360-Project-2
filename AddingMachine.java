@@ -1,6 +1,8 @@
+package cse360assign2;
 /*
 * Adding machine class
 * @author Sahas Chitlange
+* @class-ID : 1213918249 
 * @version 1.0
 * @since 2019-10-03
 */
